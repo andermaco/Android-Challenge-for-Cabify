@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <!--<color name="colorPrimaryDark">#6f36ff</color>-->
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="purple">#6f36ff</color>
+    <color name="white">#ffffff</color>
+    <color name="button_unselected">#CC6F36FF</color>
+    <color name="button_selected">#CCFF4081</color>
+    <color name="address">#CC7c5e7a</color>
+    <color name="vehicles">#7c5e7a</color>
+    <color name="black">#000000</color>
+
+</resources>

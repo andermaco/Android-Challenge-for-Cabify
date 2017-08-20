@@ -1,0 +1,39 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/main_container">
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.androidchallenge.andermaco.cabifychallenge.ui.map.views.JourneyMapsActivity" />
+
+    <!--<include layout="@layout/vehicle_list" />-->
+    <!--<FrameLayout-->
+        <!--android:id="@+id/vehicle_container"-->
+        <!--style="@style/VehicleItemStyle" />-->
+    <!--<fragment-->
+        <!--android:id="@+id/vehicle_container"-->
+        <!--style="@style/VehicleItemStyle"-->
+      <!--/>-->
+
+    <com.ander.components.CustomTextView
+        android:id="@+id/address"
+        style="@style/CustomBottoms.Address"/>
+
+    <com.ander.components.CustomImageView
+        android:id="@+id/loading_image"
+        style="@style/CustomImages.SelectTarget"/>
+
+    <com.ander.components.CustomTextView
+        android:id="@+id/select_bt"
+        style="@style/CustomBottoms.SelectTarget"/>
+
+    <!--<com.ander.components.CustomTextView-->
+        <!--android:id="@+id/select_vehicle"-->
+        <!--style="@style/CustomBottoms.SelectTarget"/>-->
+
+</RelativeLayout>

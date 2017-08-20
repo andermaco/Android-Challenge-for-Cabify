@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material design dimensions -->
+    <dimen name="tiny_block">4dp</dimen>
+    <dimen name="little_block">8dp</dimen>
+    <dimen name="small_block">16dp</dimen>
+    <dimen name="medium_block">32dp</dimen>
+    <dimen name="normal_block">48dp</dimen>
+
+    <!-- Margins-->
+    <dimen name="base_margin">@dimen/tiny_block</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text">16sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <!-- VehicleModel item layout -->
+    <dimen name="vehicle_item_layout_height">50dp</dimen>
+
+</resources>

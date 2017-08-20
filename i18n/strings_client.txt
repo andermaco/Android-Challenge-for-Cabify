@@ -1,0 +1,74 @@
+[[ LOADING_CABIFY_CHALLENGE ]]
+	[loading_activity_name]
+		en = Loading
+		es = Inicializando
+		tags = android
+	[loading_select_target]
+		en = Choose destination
+		es = Selecciona destino
+		tags = android
+	[loading_select_vehicle]
+		en = Select vehicle
+		es = Selecciona vehículo
+		tags = android
+
+[[ COMMON CABIFY CHALLENGE ]]
+	[app_name]
+		en = Challenge
+		es = Reto
+		tags = android
+	[title_activity_journey_maps]
+		en = Select Journey
+		es = Selecciona trayecto
+		tags = android
+	[permission_rationale]
+		en = Location permission required
+		es = Permiso de localización requerido
+		tags = android
+	[permission_denied_descripion]
+		en = Permission denied, but it is mandatory for maps functionality
+		es = Permiso denegado, pero es absolutamente necesario para la funcionadad de mapas.
+		tags = android
+	[settings]
+		en = Settings
+		es = Configuración
+		tags = android
+	[your_position]
+		en = Your position
+		es = Su posición
+		tags = android
+	[no_location]
+		en = No location detected
+		es = No se ha detectado localización
+		tags = android
+[[ LOCATION ]]
+	[service_not_available]
+		en = Service not available 
+		es = Servicio no disponible
+		tags = android
+	[invalid_lat_long_used]
+		en = Invalid Latitude, Longitude
+		es = Latitud, longitud inválida
+		tags = android
+	[no_address_found]
+		en = No address found
+		es = Dirección no encontrada
+		tags = android
+	[address_found]
+		en = Address found
+		es = Dirección encontrada
+		tags = android
+	[timeout_reached]
+		en = Timeout reached. Try again later
+		es = Expiró el tiempo. Inténtalo más tarde.
+		tags = android
+	[location_permission_required]
+		en = Location permission required
+		es = Se requiere permiso de Localización
+		tags = android
+
+[[ VEHICLES ]]
+	[title_activity_vehicles]
+		en = Vehicles
+		es = Vehículos
+		tags = android

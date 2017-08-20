@@ -1,0 +1,132 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+task generateLocalizations {
+    def os = System.getProperty("os.name").toLowerCase()
+    String script = ''
+    if (os.contains("mac os")) {
+        // Mac
+        script = 'if hash twine 2>/dev/null; ' +
+                'then   generate-all-localization-files ../i18n/strings_client.txt ./src/main/res --tag android; ' +
+                ' fi'
+    } else {
+        // assume Linux
+        script = 'twine generate-all-localization-files ../i18n/strings_client.txt ./src/main/res --tags android'
+    }
+    exec {
+        executable "sh"
+        args '-c', script
+    }
+}
+
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        // These docs use an open ended version so that our plugin
+        // can be updated quickly in response to Android tooling updates
+
+        // We recommend changing it to the latest version from our changelog:
+        // https://docs.fabric.io/android/changelog.html#fabric-gradle-plugin
+        classpath 'io.fabric.tools:gradle:1.23.0'
+    }
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.andermaco.cabifychallenge"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        buildConfigField "String", "BASEURL", "\"https://test.cabify.com/\""
+        buildConfigField "int", "CACHETIME", "432000" // 5days
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+
+    // Google Maps
+    compile "com.google.android.gms:play-services-maps:$rootProject.ext.googleMaps"
+
+    // Dagger 2
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.dagger2Version"
+    compile "com.google.dagger:dagger:$rootProject.ext.dagger2Version"
+
+    //Crashlitycs
+    compile("com.crashlytics.sdk.android:crashlytics:$rootProject.ext.crashlyticsVersion@aar") {
+        transitive = true;
+    }
+
+    // Butterknife
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+
+    // Location
+    compile "com.google.android.gms:play-services-location:$rootProject.ext.locationServicesVersion"
+
+    // Design
+    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+
+    // Http
+    compile "com.squareup.okhttp3:okhttp:$rootProject.ext.okHttpVersion"
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okHttpLoginInterceptor"
+
+    compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+
+    //Retrofit
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-scalars:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
+
+    //Event Bus
+    compile "org.greenrobot:eventbus:$rootProject.ext.eventBusVersion"
+
+    //Picasso
+    compile "com.squareup.picasso:picasso:$rootProject.ext.picassoVersion"
+
+    // Reactive
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
+
+    compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+
+    compile project(path: ':components')
+    compile project(path: ':components')
+
+    // Testing
+//    testCompile 'junit:junit:4.12'
+    compile "junit:junit:$rootProject.ext.jUnitVersion"
+    compile "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
+//    compile testingDependencies.hamcrest
+//    compile testingDependencies.robolectric
+}

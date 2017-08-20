@@ -1,0 +1,24 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    //JSON
+    compile "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+
+    //Event Bus
+    compile "org.greenrobot:eventbus:$rootProject.ext.eventBusVersion"
+
+    //Retrofit
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-scalars:$rootProject.ext.retrofitVersion"
+
+    //Http
+    compile "com.squareup.okhttp3:okhttp:$rootProject.ext.okHttpVersion"
+
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

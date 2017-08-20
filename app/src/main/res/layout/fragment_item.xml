@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingTop="@dimen/little_block"
+    android:paddingBottom="@dimen/little_block">
+
+    <com.ander.components.CustomImageView
+        android:id="@+id/vehicle_image"
+        style="@style/Vehicle"/>
+
+    <com.ander.components.CustomTextView
+        android:id="@+id/vehicle_name"
+        style="@style/Vehicle"/>
+
+    <LinearLayout
+        style="@style/Vehicle.Price">
+        <com.ander.components.CustomTextView
+            android:id="@+id/vehicle_price"
+            style="@style/Vehicle"/>
+        <com.ander.components.CustomTextView
+            android:id="@+id/vehicle_currency"
+            style="@style/Vehicle"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

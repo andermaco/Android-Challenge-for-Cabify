@@ -1,0 +1,61 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://maven.google.com" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    //Package id
+    packageId = "com.andermaco.cabifychallenge"
+    // Sdk and tools
+    compileSdkVersion = 26
+    buildToolsVersion = '26.0.1'
+    minSdkVersion = 16
+    targetSdkVersion = 26
+
+    // App version
+    versionCode = 1
+    versionName = '1.0.1'
+
+    // Test instrumentation
+    testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+    jUnitVersion = '4.12'
+    mockitoVersion = '1.10.19'
+
+    // App dependencies
+    supportLibraryVersion = '26.0.0'
+    butterknifeVersion = '8.7.0'
+    dagger2Version = '2.8'
+    gsonVersion = '2.8.0'
+    googleMaps = '11.0.2'
+    crashlyticsVersion = '2.6.8'
+    locationServicesVersion = '11.0.2'
+    jsonVersion = '20160810'
+    okHttpVersion = '3.5.0'
+    okHttpLoginInterceptor = '3.8.0'
+    eventBusVersion = '3.0.0'
+    retrofitVersion = '2.2.0'
+    picassoVersion = '2.5.2'
+    rxJavaVersion = '2.0.2'
+    rxAndroidVersion = '2.0.1'
+
+}
