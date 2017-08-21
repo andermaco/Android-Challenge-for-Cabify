@@ -36,9 +36,8 @@ public class JourneyMapsViewModule {
     public JourneyMapsPresenter provideJourneyMapsPresenter(JourneyMapsView view,
                                                             Router router,
                                                             ResourceManager resourceManager,
-                                                            GetEstimatesService getEstimatesService,
-                                                            StopsManager stopsManager) {
-        return new JourneyMapsPresenter(view, router, resourceManager, getEstimatesService, stopsManager);
+                                                            GetEstimatesService getEstimatesService) {
+        return new JourneyMapsPresenter(view, router, resourceManager, getEstimatesService);
     }
 
     @PerActivity

@@ -23,7 +23,6 @@ import com.andermaco.challenge.view.activity.JourneyMaps;
 import com.andermaco.challenge.view.activity.JourneyMapsView;
 import com.andermaco.challenge.view.common.utils.ResourceManager;
 import com.andermaco.challenge.view.common.utils.Router;
-import com.andermaco.challenge.view.common.utils.StopsManager;
 import com.andermaco.challenge.view.managers.location.AddressResultReceiver;
 import com.andermaco.challenge.view.presenter.base.BasePresenter;
 import com.andermaco.challenge.view.presenter.base.BaseViewPresenter;
@@ -57,16 +56,13 @@ public class JourneyMapsPresenter extends BaseViewPresenter implements BasePrese
     private boolean mShowMarkerTitle = true;
     private AddressResultReceiver mTargetAddressResultReceiver;
     private GetEstimatesService mGetEstimatesService;
-    private StopsManager mStopsManager;
     private DisposableObserver disposableObserver;
 
     public JourneyMapsPresenter(JourneyMapsView view, Router router,
                                 ResourceManager resourceManager,
-                                GetEstimatesService mGetEstimatesService,
-                                StopsManager stopsManager) {
+                                GetEstimatesService mGetEstimatesService) {
         super(view, router, resourceManager);
         this.mGetEstimatesService = mGetEstimatesService;
-        this.mStopsManager = stopsManager;
         mTargetAddressResultReceiver = new AddressResultReceiver(new Handler());
     }
 
