@@ -124,9 +124,7 @@ dependencies {
     compile project(path: ':components')
 
     // Testing
-//    testCompile 'junit:junit:4.12'
-    compile "junit:junit:$rootProject.ext.jUnitVersion"
-    compile "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
-//    compile testingDependencies.hamcrest
-//    compile testingDependencies.robolectric
+    testCompile "junit:junit:$rootProject.ext.jUnitVersion"
+    testCompile "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
+    androidTestCompile "org.mockito:mockito-android:$rootProject.ext.mockitoVersion"
 }

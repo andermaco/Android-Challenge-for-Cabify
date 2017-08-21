@@ -7,17 +7,16 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.andermaco.challenge.R;
 import com.andermaco.challenge.view.activity.Loading;
 import com.andermaco.challenge.view.activity.LoadingView;
-import com.andermaco.challenge.view.presenter.base.BasePresenter;
-import com.andermaco.challenge.view.presenter.base.BaseViewPresenter;
 import com.andermaco.challenge.view.common.utils.ResourceManager;
 import com.andermaco.challenge.view.common.utils.Router;
+import com.andermaco.challenge.view.presenter.base.BasePresenter;
+import com.andermaco.challenge.view.presenter.base.BaseViewPresenter;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -122,14 +121,7 @@ public class LoadingPresenter extends BaseViewPresenter implements BasePresenter
 
     public void showSnackbar(final String text) {
         if (view != null) {
-            Snackbar.make(((LoadingView) view).getContainer(), text, Snackbar.LENGTH_LONG).show();
-        }
-    }
-
-    public void showSnackbar(final String text, final int actionStringId,
-                             View.OnClickListener listener) {
-        if (view != null) {
-            Snackbar.make(view.getContainer(), text, Snackbar.LENGTH_LONG).show();
+            Snackbar.make((view).getContainer(), text, Snackbar.LENGTH_LONG).show();
         }
     }
 
