@@ -24,7 +24,6 @@ import static org.junit.Assert.assertThat;
  * Created by andermaco@gmail.com on 20/08/17.
  */
 
-//@RunWith(MockitoJUnitRunner.class)
 public class LoadingPresenterTest {
 
     @Rule
