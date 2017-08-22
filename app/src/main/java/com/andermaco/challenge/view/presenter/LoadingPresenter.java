@@ -129,7 +129,7 @@ public class LoadingPresenter extends BaseViewPresenter implements BasePresenter
         router.openSettings();
     }
 
-    private boolean checkPermissions() {
+    public boolean checkPermissions() {
         int permissionState = ActivityCompat.checkSelfPermission((Loading) view,
                 Manifest.permission.ACCESS_FINE_LOCATION);
         return permissionState == PackageManager.PERMISSION_GRANTED;
@@ -161,5 +161,9 @@ public class LoadingPresenter extends BaseViewPresenter implements BasePresenter
                 router.openSettings();
             }
         }, ROUTE_TO_SETTINGS_TIMEOUT_MILLISECONDS);
+    }
+
+    public Location getmLastLocation() {
+        return mLastLocation;
     }
 }
