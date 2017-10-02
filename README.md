@@ -1,6 +1,6 @@
 # Android Challenge
 
-Android Challenge sample app done following Clean Architecture principles.
+Android Cabify.es job interview Challenge sample app.
 
 # WHAT
 
